@@ -3,8 +3,8 @@
 #$s.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
 [Reflection.Assembly]::LoadFile("C:\Program Files\Microsoft\Exchange\Web Services\2.2\Microsoft.Exchange.WebServices.dll")
 $s = New-Object Microsoft.Exchange.WebServices.Data.ExchangeService([Microsoft.Exchange.WebServices.Data.ExchangeVersion]::Exchange2016_CU10)
-$s.Credentials = New-Object Net.NetworkCredential('lg-com-xuetao', '3k2bvpkh', 'genscript.com')
-$s.AutodiscoverUrl("lg-com-xuetao@genscript.com")
+$s.Credentials = New-Object Net.NetworkCredential('USERNAME', 'PASSWORD', 'DOMAIN.COM')
+$s.AutodiscoverUrl("USERNAME@DOMAIN.COM")
 $s.UseDefaultCredentials = $true
 
 # discover the url from your email address
