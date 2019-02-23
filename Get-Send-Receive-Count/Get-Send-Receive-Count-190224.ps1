@@ -26,12 +26,12 @@ $d = 0
 foreach ($r in $a)
 {
 
-	$b = (((((((($r.Recipients -notmatch "genscript.com") -notmatch "legendbiotech.com") -notmatch "bestzyme.com") -notmatch "apsbio.com") -notmatch "customarrayinc.com") -notmatch "genscript.com.cn") -notmatch "maplebiotechnology.com") -notmatch "yantzeinvest.com").count
+	$b = (((((((($r.Recipients -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com").count
 	$d = $d + $b
 }
 #######################Get Receive Email Count#######################
 $e = Get-TransportService | Get-MessageTrackingLog -ResultSize Unlimited -Recipients $c.EmailAddress -EventId "DELIVER" -Start $From -End $To
-$g = ((((((((($e.Sender -notmatch "genscript.com") -notmatch "legendbiotech.com") -notmatch "bestzyme.com") -notmatch "apsbio.com") -notmatch "customarrayinc.com") -notmatch "genscript.com.cn") -notmatch "maplebiotechnology.com") -notmatch "yantzeinvest.com") -notmatch ".local").count
+$g = ((((((((($e.Sender -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com") -notmatch "domain.com").count
 $c.InternalSend = $a.Recipients.count - $d
 $c.ExternalSend = $d
 $c.InternalReceive = $e.Sender.count - $g
